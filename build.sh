@@ -15,7 +15,9 @@ curl -L \
   -H "Accept: application/vnd.github+json" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/googleapis/google-cloud-go/pulls/7462/files
-awk
+awk -h
+jq -h
+
 if [ "$1" == "release" ]; then
   javac -g:none Hello.java
 else
