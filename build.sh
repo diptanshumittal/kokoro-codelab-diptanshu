@@ -6,7 +6,7 @@ curl -L -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-
  awk '/^[+]/{print substr($2,2, length($2)-3)}'
 
 read -a array <<< $(curl -L -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" \
- https://api.github.com/repos/googleapis/google-cloud-go/pulls/$PR_NUMBER/files | \
+ https://api.github.com/repos/googleapis/google-cloud-go/pulls/7687/files | \
  jq -r 'map(select(.filename == ".release-please-manifest-individual.json" or .filename == ".release-please-manifest-submodules.json") | .patch)[0]' | \
  awk '/^[+]/{print substr($2,2, length($2)-3)}')
 
