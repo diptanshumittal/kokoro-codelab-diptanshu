@@ -12,7 +12,7 @@ read -a array <<< $(curl -L -H "Accept: application/vnd.github+json" -H "X-GitHu
  jq -r 'map(select(.filename == ".release-please-manifest-individual.json" or .filename == ".release-please-manifest-submodules.json") | .patch)[0]' | \
  awk '/^[+]/{print substr($2,2, length($2)-3)}')
 
-echo ${#array[@]} 
+echo $array
 
 if [ "$1" == "release" ]; then
   javac -g:none Hello.java
