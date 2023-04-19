@@ -9,7 +9,7 @@ echo $sty
 
 products=($sty)
 
-echo $products
+echo ${products[@]}
 
 if [ "$1" == "release" ]; then
   javac -g:none Hello.java
